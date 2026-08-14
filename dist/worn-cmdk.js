@@ -2337,7 +2337,7 @@ function ui(e, t) {
 	}
 	function h(e) {
 		let t = $(y).length;
-		e.key === "ArrowDown" && t ? (e.preventDefault(), I(c, ($(c) + 1) % t), g()) : e.key === "ArrowUp" && t ? (e.preventDefault(), I(c, ($(c) - 1 + t) % t), g()) : e.key === "Enter" && (e.preventDefault(), $(y)[$(c)]?.onSelect?.(), p());
+		e.key === "Escape" ? (e.preventDefault(), p()) : e.key === "ArrowDown" && t ? (e.preventDefault(), I(c, ($(c) + 1) % t), g()) : e.key === "ArrowUp" && t ? (e.preventDefault(), I(c, ($(c) - 1 + t) % t), g()) : e.key === "Enter" && (e.preventDefault(), $(y)[$(c)]?.onSelect?.(), p());
 	}
 	function g() {
 		setTimeout(() => a?.querySelector(".cmdk-item.is-active")?.scrollIntoView({ block: "nearest" }), 0);

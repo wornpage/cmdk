@@ -113,6 +113,7 @@ describe('command palette chrome', () => {
 	test('emits one close event from the native dialog close path', () => {
 		expect(cmdkSource.match(/dispatchEvent\(new CustomEvent\('close'\)\)/gu)?.length).toBe(1);
 		expect(cmdkSource).toContain("onclose={() => dispatchEvent(new CustomEvent('close'))}");
+		expect(cmdkSource).toContain("if (e.key === 'Escape') { e.preventDefault(); closePalette(); }");
 		expect(cmdkSource).not.toContain("e.key === 'Escape' && dispatchEvent");
 	});
 

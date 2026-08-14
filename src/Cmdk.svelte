@@ -65,7 +65,8 @@
 
 	function onKeydown(e: KeyboardEvent) {
 		const count = displayedItems.length;
-		if (e.key === 'ArrowDown' && count) { e.preventDefault(); selected = (selected + 1) % count; scrollActive(); }
+		if (e.key === 'Escape') { e.preventDefault(); closePalette(); }
+		else if (e.key === 'ArrowDown' && count) { e.preventDefault(); selected = (selected + 1) % count; scrollActive(); }
 		else if (e.key === 'ArrowUp' && count) { e.preventDefault(); selected = (selected - 1 + count) % count; scrollActive(); }
 		else if (e.key === 'Enter') { e.preventDefault(); displayedItems[selected]?.onSelect?.(); closePalette(); }
 	}
