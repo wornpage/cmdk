@@ -16,7 +16,7 @@ function _() {
 		reject: t
 	};
 }
-var v = 1024, y = 2048, b = 4096, x = 8192, S = 16384, C = 32768, w = 1 << 25, ee = 65536, te = 1 << 19, ne = 1 << 20, re = 1 << 25, ie = 65536, ae = 1 << 21, oe = 1 << 22, se = 1 << 23, ce = Symbol("$state"), le = Symbol("legacy props"), ue = Symbol(""), de = Symbol("attributes"), fe = Symbol("class"), pe = Symbol("style"), me = Symbol("text"), he = Symbol("form reset"), ge = new class extends Error {
+var v = 1024, y = 2048, b = 4096, x = 8192, S = 16384, ee = 32768, C = 1 << 25, te = 65536, w = 1 << 19, ne = 1 << 20, re = 1 << 25, ie = 65536, ae = 1 << 21, oe = 1 << 22, se = 1 << 23, ce = Symbol("$state"), le = Symbol("legacy props"), ue = Symbol(""), de = Symbol("attributes"), fe = Symbol("class"), pe = Symbol("style"), me = Symbol("text"), he = Symbol("form reset"), ge = new class extends Error {
 	name = "StaleReactionError";
 	message = "The reaction that called `getAbortSignal()` was re-run or destroyed";
 }(), _e = !!globalThis.document?.contentType && /* @__PURE__ */ globalThis.document.contentType.includes("xml");
@@ -262,7 +262,7 @@ function ot(e) {
 }
 //#endregion
 //#region node_modules/svelte/src/internal/client/dom/blocks/boundary.js
-var st = ee | te;
+var st = te | w;
 function ct(e, t, n, r) {
 	new lt(e, t, n, r);
 }
@@ -488,7 +488,7 @@ function pt() {
 /*#__NO_SIDE_EFFECTS__*/
 function mt(e) {
 	var n = 2 | y;
-	return q !== null && (q.f |= te), {
+	return q !== null && (q.f |= w), {
 		ctx: k,
 		deps: null,
 		effects: null,
@@ -1156,7 +1156,7 @@ function B(e, t) {
 		} catch (e) {
 			throw H(r), e;
 		}
-		i.deps === null && i.teardown === null && i.nodes === null && i.first === i.last && !(i.f & 524288) && (i = i.first, e & 16 && e & 65536 && i !== null && (i.f |= ee));
+		i.deps === null && i.teardown === null && i.nodes === null && i.first === i.last && !(i.f & 524288) && (i = i.first, e & 16 && e & 65536 && i !== null && (i.f |= te));
 	}
 	if (i !== null && (i.parent = n, n !== null && un(i, n), W !== null && W.f & 2 && !(e & 64))) {
 		var a = W;
@@ -1184,14 +1184,14 @@ function mn(e) {
 }
 function hn(e) {
 	Nt.ensure();
-	let t = B(64 | te, e);
+	let t = B(64 | w, e);
 	return () => {
 		H(t);
 	};
 }
 function gn(e) {
 	Nt.ensure();
-	let t = B(64 | te, e);
+	let t = B(64 | w, e);
 	return (e = {}) => new Promise((n) => {
 		e.outro ? Dn(t, () => {
 			H(t), n(void 0);
@@ -1202,7 +1202,7 @@ function _n(e) {
 	return B(4, e);
 }
 function vn(e) {
-	return B(oe | te, e);
+	return B(oe | w, e);
 }
 function yn(e, t = 0) {
 	return B(8 | t, e);
@@ -1218,7 +1218,7 @@ function xn(e, t = 0) {
 	return B(16 | t, e);
 }
 function V(e) {
-	return B(32 | te, e);
+	return B(32 | w, e);
 }
 function Sn(e) {
 	var t = e.teardown;
@@ -1251,10 +1251,10 @@ function wn(e) {
 }
 function H(e, t = !0) {
 	var n = !1;
-	(t || e.f & 262144) && e.nodes !== null && e.nodes.end !== null && (Tn(e.nodes.start, e.nodes.end), n = !0), e.f |= w, Cn(e, t && !n), Kn(e, 0);
+	(t || e.f & 262144) && e.nodes !== null && e.nodes.end !== null && (Tn(e.nodes.start, e.nodes.end), n = !0), e.f |= C, Cn(e, t && !n), Kn(e, 0);
 	var r = e.nodes && e.nodes.t;
 	if (r !== null) for (let e of r) e.stop();
-	Sn(e), e.f ^= w, e.f |= S;
+	Sn(e), e.f ^= C, e.f |= S;
 	var i = e.parent;
 	i !== null && i.first !== null && En(e), e.next = e.prev = e.teardown = e.ctx = e.deps = e.fn = e.nodes = e.ac = e.b = null;
 }
@@ -1370,7 +1370,7 @@ function Wn(e) {
 	try {
 		e.f |= ae;
 		var u = e.fn, d = u();
-		e.f |= C;
+		e.f |= ee;
 		var f = e.deps, p = M?.is_fork;
 		if (X !== null) {
 			var m;
@@ -1447,7 +1447,7 @@ function $(e) {
 			var o = i.v;
 			return (!(i.f & 1024) && i.reactions !== null || Xn(i)) && (o = bt(i)), Vt.set(i, o), o;
 		}
-		var s = !(i.f & 512) && !G && W !== null && (Nn || !!(W.f & 512)), c = (i.f & C) === 0;
+		var s = !(i.f & 512) && !G && W !== null && (Nn || !!(W.f & 512)), c = (i.f & ee) === 0;
 		Hn(i) && (s && (i.f |= 512), xt(i)), s && !c && (Ct(i), Yn(i));
 	}
 	if (N?.has(e)) return N.get(e);
@@ -1728,7 +1728,7 @@ var Sr = class {
 function Cr(e, t, n = !1) {
 	var r;
 	T && (r = E, Pe());
-	var i = new Sr(e), a = n ? ee : 0;
+	var i = new Sr(e), a = n ? te : 0;
 	function o(e, t) {
 		if (T) {
 			var n = Le(r);
@@ -1853,10 +1853,10 @@ function kr(e, t, n, r, i) {
 				if (p.length < m.length) {
 					var b = m[0], x;
 					d = b.prev;
-					var S = p[0], C = p[p.length - 1];
+					var S = p[0], ee = p[p.length - 1];
 					for (x = 0; x < p.length; x += 1) jr(p[x], b, n);
 					for (x = 0; x < m.length; x += 1) u.delete(m[x]);
-					Mr(e, S.prev, C.next), Mr(e, d, S), Mr(e, C, b), l = b, d = C, --v, p = [], m = [];
+					Mr(e, S.prev, ee.next), Mr(e, d, S), Mr(e, ee, b), l = b, d = ee, --v, p = [], m = [];
 				} else u.delete(_), jr(_, l, n), Mr(e, _.prev, _.next), Mr(e, _, d === null ? e.effect.first : d.next), Mr(e, d, _), d = _;
 				continue;
 			}
@@ -1870,17 +1870,17 @@ function kr(e, t, n, r, i) {
 		e.outrogroups.size === 0 && (e.outrogroups = null);
 	}
 	if (l !== null || u !== void 0) {
-		var w = [];
-		if (u !== void 0) for (_ of u) _.f & 8192 || w.push(_);
-		for (; l !== null;) !(l.f & 8192) && l !== e.fallback && w.push(l), l = Or(l.next);
-		var ee = w.length;
-		if (ee > 0) {
-			var te = r & 4 && s === 0 ? n : null;
+		var C = [];
+		if (u !== void 0) for (_ of u) _.f & 8192 || C.push(_);
+		for (; l !== null;) !(l.f & 8192) && l !== e.fallback && C.push(l), l = Or(l.next);
+		var te = C.length;
+		if (te > 0) {
+			var w = r & 4 && s === 0 ? n : null;
 			if (a) {
-				for (v = 0; v < ee; v += 1) w[v].nodes?.a?.measure();
-				for (v = 0; v < ee; v += 1) w[v].nodes?.a?.fix();
+				for (v = 0; v < te; v += 1) C[v].nodes?.a?.measure();
+				for (v = 0; v < te; v += 1) C[v].nodes?.a?.fix();
 			}
-			wr(e, w, te);
+			wr(e, C, w);
 		}
 	}
 	a && A(() => {
@@ -2305,7 +2305,7 @@ var ii = /* @__PURE__ */ dr("<small class=\"svelte-jgcga6\"> </small>"), ai = /*
 };
 function ui(e, t) {
 	He(t, !0), Nr(e, li);
-	let n = Xr(t, "items", 7, "[]"), r = Xr(t, "placeholder", 7, "Search…"), i = /* @__PURE__ */ _t(() => typeof n() == "string" ? JSON.parse(n()) : n()), a, o, s = /* @__PURE__ */ F(""), c = /* @__PURE__ */ F(0);
+	let n = Xr(t, "items", 19, () => []), r = Xr(t, "placeholder", 3, "Search…"), i, a, o = null, s = /* @__PURE__ */ F(""), c = /* @__PURE__ */ F(0);
 	function l(e, t) {
 		if (!e) return !0;
 		let n = e.toLowerCase(), r = t.toLowerCase(), i = 0;
@@ -2321,51 +2321,46 @@ function ui(e, t) {
 	}
 	let d = /* @__PURE__ */ _t(() => {
 		let e = $(s).trim().toLowerCase();
-		return (e ? $(i).filter((t) => u(t, e)) : $(i)).slice(0, 40);
+		return (e ? n().filter((t) => u(t, e)) : n()).slice(0, 40);
 	});
 	pn(() => {
 		$(d), I(c, 0);
 	});
 	function f() {
-		!a || a.open || (I(s, ""), I(c, 0), typeof a.showModal == "function" && a.showModal(), o?.focus());
+		if (!i || i.open) return;
+		let e = document.activeElement;
+		o = e instanceof HTMLElement && e !== document.body ? e : null, I(s, ""), I(c, 0), typeof i.showModal == "function" && i.showModal(), a?.focus();
 	}
 	function p() {
-		a?.open && a.close();
+		i?.open && i.close();
 	}
 	function m(e) {
 		e.target === e.currentTarget && p();
 	}
 	function h(e) {
-		let t = $(y).length;
-		e.key === "Escape" ? (e.preventDefault(), p()) : e.key === "ArrowDown" && t ? (e.preventDefault(), I(c, ($(c) + 1) % t), g()) : e.key === "ArrowUp" && t ? (e.preventDefault(), I(c, ($(c) - 1 + t) % t), g()) : e.key === "Enter" && (e.preventDefault(), $(y)[$(c)]?.onSelect?.(), p());
+		t.onclose?.(e);
+		let n = o;
+		o = null, setTimeout(() => {
+			n?.isConnected && n.focus();
+		}, 0);
 	}
-	function g() {
-		setTimeout(() => a?.querySelector(".cmdk-item.is-active")?.scrollIntoView({ block: "nearest" }), 0);
+	function g(e) {
+		let t = $(b).length;
+		e.key === "Escape" ? (e.preventDefault(), p()) : e.key === "ArrowDown" && t ? (e.preventDefault(), I(c, ($(c) + 1) % t), _()) : e.key === "ArrowUp" && t ? (e.preventDefault(), I(c, ($(c) - 1 + t) % t), _()) : e.key === "Enter" && (e.preventDefault(), $(b)[$(c)]?.onSelect?.(), p());
 	}
-	function _(e) {
-		$(y)[e]?.onSelect?.(), p();
+	function _() {
+		setTimeout(() => i?.querySelector(".cmdk-item.is-active")?.scrollIntoView({ block: "nearest" }), 0);
 	}
-	let v = /* @__PURE__ */ _t(() => ri($(d))), y = /* @__PURE__ */ _t(() => $(v).orderedItems);
-	var b = {
-		open: f,
-		get items() {
-			return n();
-		},
-		set items(e = "[]") {
-			n(e), Pt();
-		},
-		get placeholder() {
-			return r();
-		},
-		set placeholder(e = "Search…") {
-			r(e), Pt();
-		}
-	}, x = ci(), S = z(x), C = z(S);
-	Br(C), Yr(C, (e) => o = e, () => o);
-	var w = rn(C, 2);
-	O(S);
-	var ee = rn(S, 2), te = z(ee);
-	Dr(te, 19, () => $(v).noGroup, (e) => e.id, (e, t, n) => {
+	function v(e) {
+		$(b)[e]?.onSelect?.(), p();
+	}
+	let y = /* @__PURE__ */ _t(() => ri($(d))), b = /* @__PURE__ */ _t(() => $(y).orderedItems);
+	var x = { open: f }, S = ci(), ee = z(S), C = z(ee);
+	Br(C), Yr(C, (e) => a = e, () => a);
+	var te = rn(C, 2);
+	O(ee);
+	var w = rn(ee, 2), ne = z(w);
+	Dr(ne, 19, () => $(y).noGroup, (e) => e.id, (e, t, n) => {
 		var r = ai(), i = z(r);
 		let a;
 		var o = z(i), s = z(o, !0);
@@ -2378,10 +2373,10 @@ function ui(e, t) {
 			$(t).hint && e(u);
 		}), O(i), O(r), bn(() => {
 			Vr(i, "id", `cmdk-option-${$(n)}`), a = Ir(i, 1, "cmdk-item svelte-jgcga6", null, a, { "is-active": $(c) === $(n) }), Vr(i, "aria-selected", $(c) === $(n)), hr(s, $(t).label);
-		}), rr("click", i, () => _($(n))), fr(e, r);
+		}), rr("click", i, () => v($(n))), fr(e, r);
 	});
-	var ne = rn(te, 2);
-	Dr(ne, 17, () => $(v).groups, (e) => e.name, (e, t) => {
+	var re = rn(ne, 2);
+	Dr(re, 17, () => $(y).groups, (e) => e.name, (e, t) => {
 		var n = oi(), r = nn(n), i = z(r, !0);
 		O(r), Dr(rn(r, 2), 19, () => $(t).items, (e) => e.id, (e, n, r) => {
 			let i = /* @__PURE__ */ _t(() => $(t).startIndex + $(r));
@@ -2397,21 +2392,60 @@ function ui(e, t) {
 				$(n).hint && e(f);
 			}), O(o), O(a), bn(() => {
 				Vr(o, "id", `cmdk-option-${$(i)}`), s = Ir(o, 1, "cmdk-item svelte-jgcga6", null, s, { "is-active": $(c) === $(i) }), Vr(o, "aria-selected", $(c) === $(i)), hr(u, $(n).label);
-			}), rr("click", o, () => _($(i))), fr(e, a);
+			}), rr("click", o, () => v($(i))), fr(e, a);
 		}), bn(() => hr(i, $(t).name)), fr(e, n);
 	});
-	var re = rn(ne, 2), ie = (e) => {
+	var ie = rn(re, 2), ae = (e) => {
 		fr(e, si());
 	};
-	return Cr(re, (e) => {
-		$(d).length === 0 && e(ie);
-	}), O(ee), O(x), Yr(x, (e) => a = e, () => a), bn(() => {
-		Vr(C, "placeholder", r()), Vr(C, "aria-activedescendant", $(y).length ? `cmdk-option-${$(c)}` : void 0);
-	}), nr("close", x, () => dispatchEvent(new CustomEvent("close"))), rr("click", x, m), rr("keydown", C, h), Gr(C, () => $(s), (e) => I(s, e)), rr("click", w, p), fr(e, x), Ue(b);
+	return Cr(ie, (e) => {
+		$(d).length === 0 && e(ae);
+	}), O(w), O(S), Yr(S, (e) => i = e, () => i), bn(() => {
+		Vr(C, "placeholder", r()), Vr(C, "aria-activedescendant", $(b).length ? `cmdk-option-${$(c)}` : void 0);
+	}), nr("close", S, h), rr("click", S, m), rr("keydown", C, g), Gr(C, () => $(s), (e) => I(s, e)), rr("click", te, p), fr(e, S), Ue(x);
 }
-ir(["click", "keydown"]), customElements.define("worn-cmdk", ni(ui, {
+ir(["click", "keydown"]);
+//#endregion
+//#region src/CmdkElement.svelte
+function di(e, t) {
+	He(t, !0);
+	let n = Xr(t, "items", 23, () => []), r = Xr(t, "placeholder", 7, "Search…"), i, a = t.$$host;
+	function o() {
+		i?.open();
+	}
+	function s() {
+		a.dispatchEvent(new CustomEvent("close", {
+			bubbles: !0,
+			composed: !0
+		}));
+	}
+	var c = {
+		open: o,
+		get items() {
+			return n();
+		},
+		set items(e = []) {
+			n(e), Pt();
+		},
+		get placeholder() {
+			return r();
+		},
+		set placeholder(e = "Search…") {
+			r(e), Pt();
+		}
+	};
+	return Yr(ui(e, {
+		get items() {
+			return n();
+		},
+		get placeholder() {
+			return r();
+		},
+		onclose: s
+	}), (e) => i = e, () => i), Ue(c);
+}
+customElements.define("worn-cmdk", ni(di, {
 	items: { type: "Array" },
 	placeholder: {}
 }, [], ["open"]));
 //#endregion
-export { ui as default };
