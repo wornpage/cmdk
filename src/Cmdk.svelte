@@ -157,6 +157,6 @@
 	.cmdk-group-label { padding: 8px 10px 4px; font-size: 10px; font-weight: 600;
 		text-transform: uppercase; letter-spacing: 0.04em; color: var(--cmdk-text-muted, var(--cockpit-text-muted, #63746a)); }
 	.cmdk-empty { padding: 12px 10px; color: var(--cmdk-text-muted, var(--cockpit-text-muted, #63746a)); font-size: 13px; }
-	@media (pointer: coarse) { .cmdk-item { min-height: 44px; } }
+	@media (pointer: coarse) { .cmdk-input { font-size: 16px; } .cmdk-item { min-height: 44px; } }
 	@media (prefers-reduced-motion: reduce) { .cmdk { animation: none; } }
 </style>

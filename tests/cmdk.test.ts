@@ -111,7 +111,13 @@ describe('command palette chrome', () => {
 		expect(cmdkSource).toContain('if (e.target === e.currentTarget) closePalette();');
 		expect(cmdkSource).toContain('<button type="button" class="cmdk-close" onclick={closePalette} aria-label="Close command palette"></button>');
 		expect(cmdkSource).toContain('.cmdk-close { position: relative; flex: 0 0 auto; width: 44px; height: 44px;');
-		expect(cmdkSource).toContain('@media (pointer: coarse) { .cmdk-item { min-height: 44px; } }');
+		expect(cmdkSource).toContain('@media (pointer: coarse) { .cmdk-input { font-size: 16px; } .cmdk-item { min-height: 44px; } }');
+	});
+
+	test('uses a readable coarse-pointer search size without changing desktop size', () => {
+		expect(cmdkSource).toContain('font-size: 15px; padding: 14px 8px 14px 16px;');
+		expect(cmdkSource).toContain('@media (pointer: coarse) { .cmdk-input { font-size: 16px; } .cmdk-item { min-height: 44px; } }');
+		expect(cmdkSource).toContain('width: 44px; height: 44px;');
 	});
 
 	test('routes one native close callback through the component contract', () => {
