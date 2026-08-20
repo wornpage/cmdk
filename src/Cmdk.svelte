@@ -129,7 +129,10 @@
 </dialog>
 
 <style>
-	@keyframes cmdk-in { from { opacity: 0; transform: scale(0.96) translateY(-6px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+	@keyframes cmdk-in {
+		from { opacity: 0; transform: translateY(-6px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
 	.cmdk { animation: cmdk-in 0.15s ease-out; width: min(520px, 92vw); max-width: 92vw; padding: 0;
 		border: 1px solid var(--cmdk-border, var(--cockpit-border-strong, #d0cac1)); border-radius: var(--cmdk-radius, 8px);
 		background: var(--cmdk-surface, var(--cockpit-surface, #fff)); color: var(--cmdk-text, var(--cockpit-text, #21322b));

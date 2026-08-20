@@ -120,6 +120,13 @@ describe('command palette chrome', () => {
 		expect(cmdkSource).toContain('width: 44px; height: 44px;');
 	});
 
+	test('keeps focus-time input geometry native-sized throughout the entrance animation', () => {
+		const animation = cmdkSource.match(/@keyframes cmdk-in \{([\s\S]*?)\n\t\}/u)?.[1];
+		expect(animation).toBeDefined();
+		expect(animation).not.toMatch(/scale\s*\(/u);
+		expect(cmdkSource).toContain('font-size: 16px; padding: 14px 8px 14px 16px;');
+	});
+
 	test('routes one native close callback through the component contract', () => {
 		expect(cmdkSource).toContain('onclose={handleDialogClose}');
 		expect(cmdkSource).toContain('onclose?.(event);');
