@@ -137,7 +137,7 @@
 	.cmdk::backdrop { background: var(--cmdk-backdrop, rgba(0,0,0,0.45)); }
 	.cmdk-search-row { display: flex; align-items: center; border-bottom: 1px solid var(--cmdk-border, var(--cockpit-border, #e2ddd5)); padding-right: 4px; }
 	.cmdk-input { flex: 1; min-width: 0; box-sizing: border-box; border: 0; background: transparent;
-		color: inherit; font: inherit; font-size: 15px; padding: 14px 8px 14px 16px; outline: none; }
+		color: inherit; font: inherit; font-size: 16px; padding: 14px 8px 14px 16px; outline: none; }
 	.cmdk-input::placeholder { color: var(--cmdk-text-muted, var(--cockpit-text-muted, #63746a)); opacity: 1; }
 	.cmdk-close { position: relative; flex: 0 0 auto; width: 44px; height: 44px; padding: 0; border: 0;
 		border-radius: 50%; background: transparent; color: var(--cmdk-text-muted, var(--cockpit-text-muted, #63746a)); cursor: pointer; }
@@ -157,6 +157,6 @@
 	.cmdk-group-label { padding: 8px 10px 4px; font-size: 10px; font-weight: 600;
 		text-transform: uppercase; letter-spacing: 0.04em; color: var(--cmdk-text-muted, var(--cockpit-text-muted, #63746a)); }
 	.cmdk-empty { padding: 12px 10px; color: var(--cmdk-text-muted, var(--cockpit-text-muted, #63746a)); font-size: 13px; }
-	@media (pointer: coarse) { .cmdk-input { font-size: 16px; } .cmdk-item { min-height: 44px; } }
+	@media (pointer: coarse) { .cmdk-item { min-height: 44px; } }
 	@media (prefers-reduced-motion: reduce) { .cmdk { animation: none; } }
 </style>
