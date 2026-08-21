@@ -148,7 +148,9 @@
 		border-radius: 1px; background: currentColor; }
 	.cmdk-close::before { transform: translate(-50%, -50%) rotate(45deg); }
 	.cmdk-close::after { transform: translate(-50%, -50%) rotate(-45deg); }
-	.cmdk-close:hover { background: var(--cmdk-selected-bg, var(--cockpit-hover-bg, #d7efe7)); }
+	@media (hover: hover) and (pointer: fine) {
+		.cmdk-close:hover { background: var(--cmdk-selected-bg, var(--cockpit-hover-bg, #d7efe7)); }
+	}
 	.cmdk-close:focus-visible { outline: 2px dashed var(--cockpit-accent, currentColor); outline-offset: 2px; }
 	.cmdk-list { list-style: none; margin: 0; padding: 6px; max-height: 46vh; overflow-y: auto; }
 	.cmdk-item { display: flex; align-items: baseline; justify-content: space-between; gap: 12px;

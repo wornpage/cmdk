@@ -114,6 +114,12 @@ describe('command palette chrome', () => {
 		expect(cmdkSource).toContain('@media (pointer: coarse) { .cmdk-item { min-height: 44px; } }');
 	});
 
+	test('limits close hover feedback to fine hover pointers', () => {
+		const closeHoverRules = cmdkSource.match(/\.cmdk-close:hover \{ background: var\(--cmdk-selected-bg, var\(--cockpit-hover-bg, #d7efe7\)\); \}/gu);
+		expect(closeHoverRules).toHaveLength(1);
+		expect(cmdkSource).toContain('@media (hover: hover) and (pointer: fine) {\n\t\t.cmdk-close:hover');
+	});
+
 	test('keeps the search input at an iOS-safe size without relying on pointer media detection', () => {
 		expect(cmdkSource).toContain('font-size: 16px; padding: 14px 8px 14px 16px;');
 		expect(cmdkSource).not.toContain('.cmdk-input { font-size: 16px; }');
