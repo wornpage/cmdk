@@ -120,6 +120,18 @@ describe('command palette chrome', () => {
 		expect(cmdkSource).toContain('@media (hover: hover) and (pointer: fine) {\n\t\t.cmdk-close:hover');
 	});
 
+	test('keeps pointer and keyboard navigation on one selected result', () => {
+		expect(cmdkSource).toContain('function selectPointerItem(index: number) { selected = index; }');
+		expect(cmdkSource).toContain('onpointerenter={() => selectPointerItem(i)}');
+		expect(cmdkSource).toContain('onpointerenter={() => selectPointerItem(idx)}');
+		expect(cmdkSource.match(/onpointerenter=\{\(\) => selectPointerItem\(/gu)).toHaveLength(2);
+		expect(cmdkSource).toContain('aria-activedescendant={displayedItems.length ? `cmdk-option-${selected}` : undefined}');
+	});
+
+	test('uses the component focus token with the shared high-contrast fallback', () => {
+		expect(cmdkSource).toContain('outline: 2px dashed var(--cmdk-focus, var(--cockpit-focus, var(--cockpit-accent, currentColor)));');
+	});
+
 	test('keeps the search input at an iOS-safe size without relying on pointer media detection', () => {
 		expect(cmdkSource).toContain('font-size: 16px; padding: 14px 8px 14px 16px;');
 		expect(cmdkSource).not.toContain('.cmdk-input { font-size: 16px; }');

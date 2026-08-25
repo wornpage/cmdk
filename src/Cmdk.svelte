@@ -82,6 +82,8 @@
 		closePalette();
 	}
 
+	function selectPointerItem(index: number) { selected = index; }
+
 	const grouped = $derived(groupCmdkItems(filtered));
 	const displayedItems = $derived(grouped.orderedItems);
 </script>
@@ -102,6 +104,7 @@
 			<li role="presentation">
 				<button id={`cmdk-option-${i}`} type="button" class="cmdk-item" class:is-active={selected === i}
 					role="option" aria-selected={selected === i}
+					onpointerenter={() => selectPointerItem(i)}
 					onclick={() => handleSelect(i)}>
 					<span>{item.label}</span>
 					{#if item.hint}<small>{item.hint}</small>{/if}
@@ -115,6 +118,7 @@
 				<li role="presentation">
 					<button id={`cmdk-option-${idx}`} type="button" class="cmdk-item" class:is-active={selected === idx}
 						role="option" aria-selected={selected === idx}
+						onpointerenter={() => selectPointerItem(idx)}
 						onclick={() => handleSelect(idx)}>
 						<span>{item.label}</span>
 						{#if item.hint}<small>{item.hint}</small>{/if}
@@ -151,7 +155,7 @@
 	@media (hover: hover) and (pointer: fine) {
 		.cmdk-close:hover { background: var(--cmdk-selected-bg, var(--cockpit-hover-bg, #d7efe7)); }
 	}
-	.cmdk-close:focus-visible { outline: 2px dashed var(--cockpit-accent, currentColor); outline-offset: 2px; }
+	.cmdk-close:focus-visible { outline: 2px dashed var(--cmdk-focus, var(--cockpit-focus, var(--cockpit-accent, currentColor))); outline-offset: 2px; }
 	.cmdk-list { list-style: none; margin: 0; padding: 6px; max-height: 46vh; overflow-y: auto; }
 	.cmdk-item { display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
 		padding: 8px 10px; border-radius: var(--cmdk-radius-sm, 6px); cursor: pointer;
