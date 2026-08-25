@@ -144,8 +144,9 @@
 	.cmdk::backdrop { background: var(--cmdk-backdrop, rgba(0,0,0,0.45)); }
 	.cmdk-search-row { display: flex; align-items: center; border-bottom: 1px solid var(--cmdk-border, var(--cockpit-border, #e2ddd5)); padding-right: 4px; }
 	.cmdk-input { flex: 1; min-width: 0; box-sizing: border-box; border: 0; background: transparent;
-		color: inherit; font: inherit; font-size: 16px; padding: 14px 8px 14px 16px; outline: none; }
+		color: inherit; font: inherit; font-size: 16px; padding: 14px 8px 14px 16px; }
 	.cmdk-input::placeholder { color: var(--cmdk-text-muted, var(--cockpit-text-muted, #63746a)); opacity: 1; }
+	.cmdk-input:focus-visible { outline: 2px solid var(--cmdk-focus, var(--cockpit-focus, var(--cockpit-accent, currentColor))); outline-offset: -2px; }
 	.cmdk-close { position: relative; flex: 0 0 auto; width: 44px; height: 44px; padding: 0; border: 0;
 		border-radius: 50%; background: transparent; color: var(--cmdk-text-muted, var(--cockpit-text-muted, #63746a)); cursor: pointer; }
 	.cmdk-close::before, .cmdk-close::after { content: ''; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.5px;
